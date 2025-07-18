@@ -8,24 +8,32 @@ export const TextNode: React.FC<NodeProps<TextNodeData>> = ({
 }) => {
   return (
     <div
-      className={`px-4 py-2 shadow-md rounded-md bg-white border-2 ${
+      className={`shadow-md rounded-md bg-white border-2 ${
         selected ? "border-blue-500" : "border-gray-200"
-      }`}
+      } overflow-hidden`}
     >
       <Handle
         type="target"
         position={Position.Left}
         className="w-3 h-3 bg-blue-500"
+        style={{ top: "50%" }}
       />
 
-      <div className="flex items-center">
-        <div className="ml-2">
-          <div className="text-xs font-bold text-gray-500 mb-1">
-            💬 Send Message
-          </div>
-          <div className="text-sm text-gray-800 max-w-xs break-words">
-            {data.message || "Click to edit message"}
-          </div>
+      {/* Header Section */}
+      <div className="bg-green-100 px-3 py-2 flex items-center justify-between">
+        <div className="flex items-center">
+          <span className="text-sm mr-2">💬</span>
+          <span className="text-sm font-bold text-gray-800">Send Message</span>
+        </div>
+        <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+          <span className="text-white text-xs">📱</span>
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="px-3 py-2 bg-white">
+        <div className="text-sm text-gray-800">
+          {data.message || "Click to edit message"}
         </div>
       </div>
 
@@ -33,6 +41,7 @@ export const TextNode: React.FC<NodeProps<TextNodeData>> = ({
         type="source"
         position={Position.Right}
         className="w-3 h-3 bg-blue-500"
+        style={{ top: "50%" }}
       />
     </div>
   );

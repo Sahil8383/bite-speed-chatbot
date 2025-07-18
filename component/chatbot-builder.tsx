@@ -27,7 +27,7 @@ const ChatbotFlowBuilder: React.FC = () => {
   } = useChatbotFlow();
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-gray-50 overflow-hidden">
       {selectedNode ? (
         <SettingsPanel
           selectedNode={selectedNode}
@@ -38,10 +38,10 @@ const ChatbotFlowBuilder: React.FC = () => {
         <NodesPanel onDragStart={onDragStart} />
       )}
 
-      <div className="flex-1 relative">
+      <div className="flex-1 flex flex-col min-h-0">
         <Header onSave={validateAndSave} errorMessage={errorMessage} />
 
-        <div className="h-full" ref={reactFlowWrapper}>
+        <div className="flex-1 min-h-0" ref={reactFlowWrapper}>
           <ChatbotFlow
             nodes={nodes}
             edges={edges}

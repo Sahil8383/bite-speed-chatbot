@@ -53,7 +53,7 @@ const ChatbotFlow: React.FC<ChatbotFlowProps> = ({
   onEdgesChange,
 }) => {
   return (
-    <div className="h-full">
+    <div className="w-full h-full">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -68,6 +68,7 @@ const ChatbotFlow: React.FC<ChatbotFlowProps> = ({
         nodeTypes={nodeTypes}
         fitView
         className="bg-gray-50"
+        style={{ width: "100%", height: "100%" }}
       >
         <Background color="#f1f5f9" gap={20} />
         <Controls />
