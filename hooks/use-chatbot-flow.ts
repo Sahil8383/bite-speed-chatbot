@@ -12,6 +12,7 @@ import {
   ReactFlowInstance,
 } from "reactflow";
 import { TextNodeData } from "@/lib/types";
+import { toast } from "sonner";
 
 const initialNodes: Node<TextNodeData>[] = [];
 const initialEdges: Edge[] = [];
@@ -143,7 +144,7 @@ export const useChatbotFlow = () => {
   const validateAndSave = (): void => {
     if (nodes.length <= 1) {
       setErrorMessage("");
-      alert("Flow saved successfully!");
+      toast.error("Cannot save flow: At least 2 nodes are required");
       return;
     }
 
@@ -161,7 +162,7 @@ export const useChatbotFlow = () => {
     }
 
     setErrorMessage("");
-    alert("Flow saved successfully!");
+    toast.success("Flow saved successfully!");
   };
 
   // Close settings panel

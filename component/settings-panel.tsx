@@ -1,5 +1,5 @@
 import { TextNodeData } from "@/lib/types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Node } from "reactflow";
 
 interface SettingsPanelProps {
@@ -16,6 +16,10 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   const [message, setMessage] = useState<string>(
     selectedNode?.data?.message || ""
   );
+
+  useEffect(() => {
+    setMessage(selectedNode?.data?.message || "");
+  }, [selectedNode]);
 
   const handleSave = (): void => {
     if (selectedNode) {
