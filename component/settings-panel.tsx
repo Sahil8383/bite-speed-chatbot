@@ -1,4 +1,5 @@
 import { TextNodeData } from "@/lib/types";
+import { ArrowLeft } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Node } from "reactflow";
 
@@ -35,7 +36,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
           onClick={onClose}
           className="text-gray-500 hover:text-gray-700 cursor-pointer"
         >
-          ✕
+          <ArrowLeft className="text-black" size={20} />
         </button>
       </div>
 

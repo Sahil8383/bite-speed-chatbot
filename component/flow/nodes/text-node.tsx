@@ -9,7 +9,7 @@ export const TextNode: React.FC<NodeProps<TextNodeData>> = ({
 }) => {
   return (
     <div
-      className={`shadow-md max-w-[200px] w-full rounded-md bg-white border-2 ${
+      className={`shadow-md w-[200px] rounded-md bg-white border-2 ${
         selected ? "border-blue-500" : "border-gray-200"
       } overflow-hidden`}
     >
@@ -26,10 +26,12 @@ export const TextNode: React.FC<NodeProps<TextNodeData>> = ({
           <span className="text-sm mr-2">
             <MessageCircleMore size={12} className="text-black" />
           </span>
-          <span className="text-sm font-bold text-gray-800">Send Message</span>
+          <span className="text-[12px] font-normal text-gray-800">
+            Send Message
+          </span>
         </div>
         <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-          <span className="text-white text-xs">
+          <span className="text-white">
             <Facebook size={12} className="text-white" />
           </span>
         </div>
@@ -37,7 +39,7 @@ export const TextNode: React.FC<NodeProps<TextNodeData>> = ({
 
       {/* Content Section */}
       <div className="px-3 py-2 bg-white">
-        <div className="text-sm text-gray-800">
+        <div className="text-[12px] text-gray-800">
           {data.message || "Click to edit message"}
         </div>
       </div>

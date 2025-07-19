@@ -1,13 +1,8 @@
 "use client";
 
-import React, { useCallback, useRef, useState } from "react";
+import React from "react";
 import ReactFlow, {
-  addEdge,
-  useNodesState,
-  useEdgesState,
   Background,
-  Controls,
-  Connection,
   Edge,
   Node,
   NodeTypes,
@@ -71,7 +66,6 @@ const ChatbotFlow: React.FC<ChatbotFlowProps> = ({
         style={{ width: "100%", height: "100%" }}
       >
         <Background color="#f1f5f9" gap={20} />
-        <Controls />
       </ReactFlow>
     </div>
   );
